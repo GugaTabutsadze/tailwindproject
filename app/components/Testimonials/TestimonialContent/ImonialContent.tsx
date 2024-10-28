@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 "use client"
 /* eslint-disable @next/next/no-img-element */
 import React, { useState } from 'react'
