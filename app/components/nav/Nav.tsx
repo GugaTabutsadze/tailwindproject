@@ -1,12 +1,24 @@
+"use client"
 /* eslint-disable @next/next/no-img-element */
-import React from 'react'
+import React, { useState } from 'react'
+import Burgermenu from './Burgermenu/Burgermenu'
 
 const Nav = () => {
+
+  const [burgerMenuOpen, setBurgerMenuOpen] = useState(false)
+
+  const handleBurgerMenuOpen = () => {
+     setBurgerMenuOpen(prev => !prev)
+  }
+
   return (
     <div className='relative container mx-auto p-6'>
        <div className='flex items-center justify-between'>
         <div className='pt-2'>
           <img src='/images/logo.svg' alt='/' />
+        </div>
+        <div>
+          <Burgermenu handleBurgerMenuOpen={handleBurgerMenuOpen} burgerMenuOpen={burgerMenuOpen}/>
         </div>
         <div className='hidden  md:flex space-x-6 items-center'>
           <a href="" className='hover:text-darkGrayishBlue'>Pricing</a>
